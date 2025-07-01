@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color:  #774110;
+                background-color: #774110;
                 text-align: center;
                 color: snow;
                 padding: 50px;
@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
                 margin-top: 20px;
             }
             #mainContent a:hover {
-                background-color: brown;
+                background-color: #774110;
                 border-radius: 20px;
                 color: snow;
             }
@@ -623,7 +623,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #4a2c2a;
+            background-color: #774110;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -693,7 +693,7 @@ app.post('/sendOrder', async (req, res) => {
         transition: all 0.3s ease;
         }
         a:hover {
-        background-color: brown;
+        background-color:  #774110;
         color: snow;
         }
         @media (max-width: 600px) {
@@ -753,7 +753,7 @@ app.post('/sendOrder', async (req, res) => {
                 <li><strong>Crédito:</strong> Até 2 dias úteis para confirmação.</li>
                 <li><strong>Boleto:</strong> Até 3 dias úteis para compensação.</li>
                 <li><strong>Débito:</strong> Processamento em tempo real.</li>
-                <li><strong>Após a confirmação do pagamento o envio será realizado dentro de até 3 dias úteis.</strong></li>
+                <li><strong>Após a confirmação do pagamento o envio será realizado dentro de até 5 dias úteis.</strong></li>
             </ul>
             <div class="footer">
                 <p>Agradecemos pela sua confiança em nossos serviços. Estamos à disposição para qualquer necessidade e esperamos atendê-lo novamente em breve.</p><br><br>
@@ -904,7 +904,7 @@ app.post('/sendOrder', async (req, res) => {
                     <li><strong>Débito:</strong> Processamento em tempo real.</li>
                 </ul>
         <div class="footer">
-            <p><strong>Após a confirmação do pagamento o envio deve ser realizado dentro de até 3 dias úteis.
+            <p><strong>Após a confirmação do pagamento o envio deve ser realizado dentro de até 5 dias úteis.
             <br>
             Verifique seu aplicativo do Mercado Pago para acompanhar o status do pagamento.</strong></p>
         </div>
