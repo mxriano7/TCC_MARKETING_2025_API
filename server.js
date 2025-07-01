@@ -952,15 +952,6 @@ app.post('/sendOrder', async (req, res) => {
     }
 });
 
-transporter.sendMail(mailOptionsAdmin, (error, info) => {
-    if (error) {
-        console.log('Erro ao enviar contato para o administrador:', error);
-        return res.status(500).json({ message: 'Erro ao enviar contato.' });
-    } else {
-        console.log('Contato enviado para o administrador:', info.response);
-    }
-});
-
 // Servidor Online.
 app.listen(PORT, () => {
     console.log(`Servidor online em ${PORT}`);
