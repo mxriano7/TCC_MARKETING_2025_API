@@ -66,8 +66,9 @@ app.get('/', (req, res) => {
 
 app.use((req, res, next) => {
     const allowedOrigins = [
-        'https://ateliemypet.netlify.app/'
+        'https://ateliemypet.netlify.app'
     ];
+
     const origin = req.headers.origin;
 
     if (allowedOrigins.includes(origin)) {
