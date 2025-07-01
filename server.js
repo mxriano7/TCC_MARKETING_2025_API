@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
         <div id="mainContent">
-            <h1>Servidor Cachaça Capitão</h1>
+            <h1>Servidor Atêlie My Pet</h1>
             <p>O servidor está online e pronto para receber requisições!</p>
         </div>
     </body>
@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 
 app.use((req, res, next) => {
     const allowedOrigins = [
-        'https://cachacascapitao.netlify.app'
+        'https://ateliemypet.netlify.app/'
     ];
     const origin = req.headers.origin;
 
