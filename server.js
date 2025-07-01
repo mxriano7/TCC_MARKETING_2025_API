@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color: #552d24;
+                background-color:  #774110;
                 text-align: center;
                 color: snow;
                 padding: 50px;
@@ -58,7 +58,6 @@ app.get('/', (req, res) => {
         <div id="mainContent">
             <h1>Servidor Cachaça Capitão</h1>
             <p>O servidor está online e pronto para receber requisições!</p>
-            <a href="https://cachacascapitao.com.br">Visite cachacascapitao.com.br</a>
         </div>
     </body>
 </html>
@@ -67,9 +66,7 @@ app.get('/', (req, res) => {
 
 app.use((req, res, next) => {
     const allowedOrigins = [
-        'https://cachacascapitao.netlify.app',
-        'https://cachacascapitao.com.br',
-        'https://www.cachacascapitao.com.br'
+        'https://cachacascapitao.netlify.app'
     ];
     const origin = req.headers.origin;
 
@@ -103,76 +100,404 @@ app.post('/calculateFreight', async (req, res) => {
     const { toPostalCode, units } = req.body;
     const allProducts = [
         {
-            id: 'amburana750ml',
-            width: 10,
-            height: 24,
-            length: 10,
-            weight: 1.6,
-            insurance_value: 100
+            id: 'Kit15PeçasAmor(Amor-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
         },
         {
-            id: 'carvalho750ml',
-            width: 10,
-            height: 24,
-            length: 10,
-            weight: 1.6,
-            insurance_value: 120
+            id: 'Kit15PeçasAmor(Amor-2)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
         },
         {
-            id: 'amburana670ml',
-            width: 8,
-            height: 30,
-            length: 8,
-            weight: 1.3,
-            insurance_value: 60
-        },
-        {
-            id: 'carvalho670ml',
-            width: 8,
-            height: 30,
-            length: 8,
-            weight: 1.3,
-            insurance_value: 80
-        },
-        {
-            id: 'prata670ml',
-            width: 8,
-            height: 30,
-            length: 8,
-            weight: 1.3,
-            insurance_value: 60
-        },
-        {
-            id: 'amburana275ml',
-            width: 8,
-            height: 30,
-            length: 8,
+            id: 'Kit15PeçasLuxo(Luxo-1)',
+            width: 21,
+            height: 5,
+            length: 25,
             weight: 0.5,
             insurance_value: 25
         },
         {
-            id: 'prata275ml',
-            width: 8,
-            height: 30,
-            length: 8,
+            id: 'Kit15PeçasLuxo(Luxo-2)',
+            width: 21,
+            height: 5,
+            length: 25,
             weight: 0.5,
             insurance_value: 25
         },
         {
-            id: 'jequitiba275ml',
-            width: 8,
-            height: 30,
-            length: 8,
+            id: 'Kit15PeçasLuxo(Luxo-3)',
+            width: 21,
+            height: 5,
+            length: 25,
             weight: 0.5,
             insurance_value: 25
         },
         {
-            id: 'kit275ml',
-            width: 8,
-            height: 30,
-            length: 20,
-            weight: 1.5,
-            insurance_value: 75
+            id: 'Kit15Peças(Kit-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15Peças(Kit-2)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15Peças(Kit-3)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15Peças(Kit-4)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15Peças(Kit-5)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15Peças(Kit-6)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15Peças(Kit-7)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-2)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-3)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-4)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-5)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-6)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-7)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-8)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-9)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'Kit15PeçasSereias(Kit-10)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 21.45
+        },
+        {
+            id: 'GargantilhasSortidas(Kit-15)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'GargantilhasemV(Kit-15)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'GargantilhasemVcomRenda(Kit-10)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 28
+        },
+        {
+            id: 'Laçarotes(Fêmea)(Kit-15)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'GravatasColarinho(Macho)(Kit-15)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'GravatasLuxo(Kit-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-2)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-3)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-4)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-5)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-6)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-7)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-8)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'GravatasLuxo(Kit-9)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 23
+        },
+        {
+            id: 'Kit4LaçosMax(Kit-4)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 15.60
+        },
+        {
+            id: 'Kit(1)40LaçosSortidos(Kit-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit(1)40LaçosSortidos(Kit-2)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit(1)40LaçosSortidos(Kit-3)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit(2)40LaçosSortidos(Kit-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit(2)40LaçosSortidos(Kit-2)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit(2)40LaçosSortidos(Kit-3)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit(2)40LaçosSortidos(Kit-4)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit(2)40LaçosSortidos(Kit-5)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 36
+        },
+        {
+            id: 'Kit50Laços(PP)Sortidos(Kit-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'Kit50Laços(PP)Sortidos(Kit-2)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'Kit50Laços(PP)Sortidos(Kit-3)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'Kit50Laços(PP)Sortidos(Kit-4)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 30
+        },
+        {
+            id: 'Pacote1000Elásticos(Kit-1)',
+            width: 21,
+            height: 5,
+            length: 25,
+            weight: 0.5,
+            insurance_value: 18.40
         }
     ];
 
@@ -197,10 +522,10 @@ app.post('/calculateFreight', async (req, res) => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
             Authorization: `Bearer ${process.env.ME_TOKEN}`,
-            'User-Agent': 'API Cachaça Capitão (paulomarianodevgmail.com)'
+            'User-Agent': 'API Atêlie My Pet (paulomarianodevgmail.com)'
         },
         data: {
-            from: { postal_code: '37310000' },
+            from: { postal_code: '13422572' },
             to: { postal_code: toPostalCode },
             services: "1,2",
             products: filteredProducts
@@ -307,7 +632,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color: #552d24;
+            color:  #774110;
             font-size: 22px;
             font-weight: 500;
             border-bottom: 1px solid #ddd;
@@ -318,7 +643,7 @@ app.post('/sendOrder', async (req, res) => {
             font-size: 16px;
         }
         p strong {
-        color: #552d24;
+        color:  #774110;
         }
         ul {
             list-style-type: none;
@@ -328,13 +653,13 @@ app.post('/sendOrder', async (req, res) => {
         li {
             padding: 10px;
             margin-bottom: 10px;
-            background-color: #f9f9f9;
+            background-color: snow;
             border: 1px solid #eee;
             border-radius: 8px;
         }
         li strong {
             display: block;
-            color: #552d24;
+            color:  #774110;
             margin-bottom: 4px;
         }
         hr {
@@ -348,12 +673,12 @@ app.post('/sendOrder', async (req, res) => {
             text-align: center;
             font-size: 14px;
             color: #777;
-            background-color: #f9f9f9;
+            background-color: snow;
             border-radius: 0 0 8px 8px;
             border-top: 1px solid #ddd;
         }
         .logo {
-        color: #552d24;
+        color:  #774110;
         }
         a {
         display: inline-block;
@@ -394,7 +719,7 @@ app.post('/sendOrder', async (req, res) => {
                 Pedido Recebido!
             </div>
             <p>Olá ${firstName} ${lastName},</p>
-            <p>Agradecemos por escolher a Cachaçaria Fazenda do Engenho!</p>
+            <p>Agradecemos por escolher o Atêlie My Pet!</p>
             <p>Abaixo estão os detalhes do seu pedido:</p>
             <hr>
             <p><strong>Status:</strong> Aguardando confirmação do pagamento...</p>
@@ -432,7 +757,7 @@ app.post('/sendOrder', async (req, res) => {
             <div class="footer">
                 <p>Agradecemos pela sua confiança em nossos serviços. Estamos à disposição para qualquer necessidade e esperamos atendê-lo novamente em breve.</p><br><br>
                 <p>Atenciosamente,<br>
-                <strong class="logo">Cachaçaria Fazenda do Engenho<br>"Lar da Cachaça Capitão"</strong></p><br><br>
+                <strong class="logo">Atêlie My Pet<br />"Qualidade e carinho, para o seu melhor amigo!""</strong></p><br><br>
                 <p>Atenção: Este é um e-mail automático.<br>
                 Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas. Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
                 Agradecemos pela sua compreensão!</p>
@@ -479,7 +804,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color: #552d24;
+            color:  #774110;
             font-size: 22px;
             margin: 20px 0 10px;
             font-weight: 500;
@@ -491,7 +816,7 @@ app.post('/sendOrder', async (req, res) => {
             font-size: 16px;
         }
         p strong {
-        color: #552d24;
+        color:  #774110;
         }
         ul {
             list-style-type: none;
@@ -501,13 +826,13 @@ app.post('/sendOrder', async (req, res) => {
         li {
             padding: 10px;
             margin-bottom: 10px;
-            background-color: #f9f9f9;
+            background-color: snow;
             border: 1px solid #eee;
             border-radius: 8px;
         }
         li strong {
             display: block;
-            color: #552d24;
+            color:  #774110;
             margin-bottom: 4px;
         }
         hr {
@@ -521,7 +846,7 @@ app.post('/sendOrder', async (req, res) => {
             text-align: center;
             font-size: 14px;
             color: #777;
-            background-color: #f9f9f9;
+            background-color: snow;
             border-radius: 0 0 8px 8px;
             border-top: 1px solid #ddd;
         }
@@ -627,247 +952,13 @@ app.post('/sendOrder', async (req, res) => {
     }
 });
 
-// Rota para enviar o contato por email.
-app.post('/sendContact', (req, res) => {
-    console.log('Requisição recebida em /sendContact');
-
-    const { name, email, message } = req.body;
-
-    const emailBodyClient = `
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="#">
-        <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f3f3;
-            line-height: 1.6;
-        }
-        .container {
-            color: #000;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        .header {
-            background-color: #4a2c2a;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-            font-size: 26px;
-            font-weight: 600;
-            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
-        }
-        h3 {
-            color: #552d24;
-            font-size: 22px;
-            margin: 20px 0 10px;
-            font-weight: 500;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-        }
-        p {
-            margin: 8px 0;
-            font-size: 16px;
-        }
-        p strong {
-        color: #552d24;
-        }
-        .footer {
-            margin-top: 30px;
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-            background-color: #f9f9f9;
-            border-radius: 0 0 8px 8px;
-            border-top: 1px solid #ddd;
-        }
-        .logo {
-        color: #552d24;
-        }
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px;
-                padding: 20px;
-            }
-            .header {
-                font-size: 24px;
-                padding: 15px;
-            }
-            h3 {
-                font-size: 20px;
-            }
-            p {
-                font-size: 14px;
-            }
-        }
-    </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">Solicitação de Contato Recebida</div>
-            <h3>Olá, ${name}!</h3>
-            <p>Recebemos sua solicitação de contato e um atendente entrará em contato com você em até 48 horas.</p>
-            <p><strong>Mensagem enviada:</strong> ${message}</p>
-            <p>Atenciosamente,<br>
-            <strong class="logo">Cachaçaria Fazenda do Engenho<br>"Lar da Cachaça Capitão"</strong></p><br><br>
-            <div class="footer">
-                <p>Atenção: Este é um e-mail automático.<br>
-                Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas.
-                Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
-                Agradecemos pela sua compreensão!</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    `;
-
-    const emailBodyAdmin = `
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="#">
-        <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f3f3;
-            line-height: 1.6;
-        }
-        .container {
-            color: #000;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        .header {
-            background-color: #4a2c2a;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px 8px 0 0;
-            font-size: 26px;
-            font-weight: 600;
-            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
-        }
-        h3 {
-            color: #552d24;
-            font-size: 22px;
-            margin: 20px 0 10px;
-            font-weight: 500;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-        }
-        p {
-            margin: 8px 0;
-            font-size: 16px;
-        }
-        p strong {
-        color: #552d24;
-        }
-        .footer {
-            margin-top: 30px;
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-            background-color: #f9f9f9;
-            border-radius: 0 0 8px 8px;
-            border-top: 1px solid #ddd;
-        }
-        .logo {
-        color: #552d24;
-        }
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px;
-                padding: 20px;
-            }
-            .header {
-                font-size: 24px;
-                padding: 15px;
-            }
-            h3 {
-                font-size: 20px;
-            }
-            p {
-                font-size: 14px;
-            }
-        }
-    </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">Novo Contato Recebido</div>
-            <h3>Dados do Contato:</h3>
-            <p><strong>Nome:</strong> ${name}</p>
-            <p><strong>E-mail:</strong> ${email}</p>
-            <p><strong>Mensagem:</strong> ${message}</p>
-            <div class="footer">
-                <p>Atenção: Este é um e-mail automático.<br>
-                Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas.
-                Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
-                Agradecemos pela sua compreensão!</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    `;
-
-    // Configuração do envio do e-mail para o cliente.
-    const mailOptionsClient = {
-        from: process.env.CONTACT_EMAIL_USER,
-        to: email,
-        subject: 'Confirmação de Solicitação de Contato',
-        html: emailBodyClient
-    };
-
-    transporter.sendMail(mailOptionsClient, (error, info) => {
-        if (error) {
-            console.log('Erro ao enviar contato para o cliente:', error);
-            return res.status(500).json({ message: 'Erro ao enviar contato.' });
-        } else {
-            console.log('Contato enviado para o cliente:', info.response);
-            return res.status(200).json({ message: 'Contato enviado com sucesso!' });
-        }
-    });
-
-    // Configuração do envio do e-mail para o administrador.
-    const mailOptionsAdmin = {
-        from: process.env.CONTACT_EMAIL_USER,
-        to: process.env.CONTACT_EMAIL_USER,
-        subject: `Solicitação de contato de ${name}`,
-        html: emailBodyAdmin
-    };
-
-    transporter.sendMail(mailOptionsAdmin, (error, info) => {
-        if (error) {
-            console.log('Erro ao enviar contato para o administrador:', error);
-            return res.status(500).json({ message: 'Erro ao enviar contato.' });
-        } else {
-            console.log('Contato enviado para o administrador:', info.response);
-        }
-    });
+transporter.sendMail(mailOptionsAdmin, (error, info) => {
+    if (error) {
+        console.log('Erro ao enviar contato para o administrador:', error);
+        return res.status(500).json({ message: 'Erro ao enviar contato.' });
+    } else {
+        console.log('Contato enviado para o administrador:', info.response);
+    }
 });
 
 // Servidor Online.
