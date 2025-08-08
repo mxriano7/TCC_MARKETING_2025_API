@@ -6,7 +6,7 @@ import express from 'express';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import { MercadoPagoConfig, Preference } from 'mercadopago';
+// import { MercadoPagoConfig, Preference } from 'mercadopago';
 dotenv.config();
 
 // Configurações do servidor.
@@ -24,11 +24,11 @@ app.get('/', (req, res) => {
     <html>
     <head>
         <link rel="icon" type="image/png" href="#">
-        <title>Servidor Cachaça Capitão</title>
+        <title>Servidor Mr Doce</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color: #774110;
+                background-color:  #ff5c87;
                 text-align: center;
                 color: snow;
                 padding: 50px;
@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
                 margin-top: 20px;
             }
             #mainContent a:hover {
-                background-color: #774110;
+                background-color:  #ff5c87;
                 border-radius: 20px;
                 color: snow;
             }
@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
         <div id="mainContent">
-            <h1>Servidor Atêlie My Pet</h1>
+            <h1>Servidor Mr. Doce</h1>
             <p>O servidor está online e pronto para receber requisições!</p>
         </div>
     </body>
@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 
 app.use((req, res, next) => {
     const allowedOrigins = [
-        'https://ateliemypet.netlify.app'
+        'https://mrdoce.netlify.app'
     ];
 
     const origin = req.headers.origin;
@@ -101,404 +101,36 @@ app.post('/calculateFreight', async (req, res) => {
     const { toPostalCode, units } = req.body;
     const allProducts = [
         {
-            id: 'Kit15PeçasAmor(Amor-1)',
-            width: 21,
+            id: 'ID1',
+            width: 20,
             height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
+            length: 20,
+            weight: 0.2,
+            insurance_value: 9.99
         },
         {
-            id: 'Kit15PeçasAmor(Amor-2)',
+            id: 'ID2',
             width: 21,
             height: 5,
             length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
+            weight: 0.2,
+            insurance_value: 9.99
         },
         {
-            id: 'Kit15PeçasLuxo(Luxo-1)',
-            width: 21,
+            id: 'ID3',
+            width: 20,
             height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 25
+            length: 20,
+            weight: 0.2,
+            insurance_value: 9.99
         },
         {
-            id: 'Kit15PeçasLuxo(Luxo-2)',
-            width: 21,
+            id: 'ID4',
+            width: 20,
             height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 25
-        },
-        {
-            id: 'Kit15PeçasLuxo(Luxo-3)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 25
-        },
-        {
-            id: 'Kit15Peças(Kit-1)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15Peças(Kit-2)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15Peças(Kit-3)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15Peças(Kit-4)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15Peças(Kit-5)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15Peças(Kit-6)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15Peças(Kit-7)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-1)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-2)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-3)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-4)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-5)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-6)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-7)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-8)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-9)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'Kit15PeçasSereias(Kit-10)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 21.45
-        },
-        {
-            id: 'GargantilhasSortidas(Kit-15)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'GargantilhasemV(Kit-15)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'GargantilhasemVcomRenda(Kit-10)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 28
-        },
-        {
-            id: 'Laçarotes(Fêmea)(Kit-15)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'GravatasColarinho(Macho)(Kit-15)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'GravatasLuxo(Kit-1)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-2)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-3)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-4)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-5)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-6)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-7)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-8)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'GravatasLuxo(Kit-9)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 23
-        },
-        {
-            id: 'Kit4LaçosMax(Kit-4)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 15.60
-        },
-        {
-            id: 'Kit(1)40LaçosSortidos(Kit-1)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit(1)40LaçosSortidos(Kit-2)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit(1)40LaçosSortidos(Kit-3)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit(2)40LaçosSortidos(Kit-1)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit(2)40LaçosSortidos(Kit-2)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit(2)40LaçosSortidos(Kit-3)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit(2)40LaçosSortidos(Kit-4)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit(2)40LaçosSortidos(Kit-5)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 36
-        },
-        {
-            id: 'Kit50Laços(PP)Sortidos(Kit-1)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'Kit50Laços(PP)Sortidos(Kit-2)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'Kit50Laços(PP)Sortidos(Kit-3)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'Kit50Laços(PP)Sortidos(Kit-4)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 30
-        },
-        {
-            id: 'Pacote1000Elásticos(Kit-1)',
-            width: 21,
-            height: 5,
-            length: 25,
-            weight: 0.5,
-            insurance_value: 18.40
+            length: 20,
+            weight: 0.2,
+            insurance_value: 5.99
         }
     ];
 
@@ -523,7 +155,7 @@ app.post('/calculateFreight', async (req, res) => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
             Authorization: `Bearer ${process.env.ME_TOKEN}`,
-            'User-Agent': 'API Atêlie My Pet (paulomarianodevgmail.com)'
+            'User-Agent': 'API Mr. Doce (paulomarianodevgmail.com)'
         },
         data: {
             from: { postal_code: '13422572' },
@@ -564,37 +196,37 @@ app.post('/sendOrder', async (req, res) => {
         return res.status(400).send('Total do pedido inválido.');
     }
 
-    // Configurações do Mercado Pago.
-    const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN;
-    const client = new MercadoPagoConfig({ accessToken });
-    const preference = new Preference(client);
+    // // Configurações do Mercado Pago.
+    // const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN;
+    // const client = new MercadoPagoConfig({ accessToken });
+    // const preference = new Preference(client);
 
     // Criar preferência de pagamento.
     try {
-        const response = await preference.create({
-            body: {
-                items: [
-                    {
-                        title: `Pedido de ${firstName} ${lastName}`,
-                        quantity: 1,
-                        unit_price: totalAmountNumber,
-                        currency_id: 'BRL',
-                    }
-                ],
-                payer: {
-                    name: `${firstName} ${lastName}`,
-                    email: emailLabel,
-                },
-                payment_methods: {
-                    excluded_payment_methods: [],
-                    excluded_payment_types: [],
-                    installments: 12,
-                },
-            }
-        });
+        // const response = await preference.create({
+        //     body: {
+        //         items: [
+        //             {
+        //                 title: `Pedido de ${firstName} ${lastName}`,
+        //                 quantity: 1,
+        //                 unit_price: totalAmountNumber,
+        //                 currency_id: 'BRL',
+        //             }
+        //         ],
+        //         payer: {
+        //             name: `${firstName} ${lastName}`,
+        //             email: emailLabel,
+        //         },
+        //         payment_methods: {
+        //             excluded_payment_methods: [],
+        //             excluded_payment_types: [],
+        //             installments: 12,
+        //         },
+        //     }
+        // });
 
-        // Obter link de pagamento da preferência criada.
-        const initPoint = response.init_point;
+        // // Obter link de pagamento da preferência criada.
+        // const initPoint = response.init_point;
 
         const emailBodyClient = `
     <!DOCTYPE html>
@@ -623,7 +255,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #774110;
+            background-color:  #ff5c87;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -633,7 +265,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color:  #774110;
+            color:   #ff5c87;
             font-size: 22px;
             font-weight: 500;
             border-bottom: 1px solid #ddd;
@@ -644,7 +276,7 @@ app.post('/sendOrder', async (req, res) => {
             font-size: 16px;
         }
         p strong {
-        color:  #774110;
+        color:   #ff5c87;
         }
         ul {
             list-style-type: none;
@@ -660,7 +292,7 @@ app.post('/sendOrder', async (req, res) => {
         }
         li strong {
             display: block;
-            color:  #774110;
+            color:   #ff5c87;
             margin-bottom: 4px;
         }
         hr {
@@ -679,7 +311,7 @@ app.post('/sendOrder', async (req, res) => {
             border-top: 1px solid #ddd;
         }
         .logo {
-        color:  #774110;
+        color:   #ff5c87;
         }
         a {
         display: inline-block;
@@ -693,7 +325,7 @@ app.post('/sendOrder', async (req, res) => {
         transition: all 0.3s ease;
         }
         a:hover {
-        background-color:  #774110;
+        background-color:   #ff5c87;
         color: snow;
         }
         @media (max-width: 600px) {
@@ -720,7 +352,7 @@ app.post('/sendOrder', async (req, res) => {
                 Pedido Recebido!
             </div>
             <p>Olá ${firstName} ${lastName},</p>
-            <p>Agradecemos por escolher o Atêlie My Pet!</p>
+            <p>Agradecemos por escolher a Mr. Doce!</p>
             <p>Abaixo estão os detalhes do seu pedido:</p>
             <hr>
             <p><strong>Status:</strong> Aguardando confirmação do pagamento...</p>
@@ -733,7 +365,8 @@ app.post('/sendOrder', async (req, res) => {
             <hr>
             <p><strong>Link para pagamento:</strong>
             <br>
-            <a href="${initPoint}">Clique aqui para pagar</a>
+            PROJETO COM FINS EDUCACIONAIS
+            <br>
             </p>
             <hr>
             <h3>Produtos no Carrinho:</h3>
@@ -757,8 +390,8 @@ app.post('/sendOrder', async (req, res) => {
             </ul>
             <div class="footer">
                 <p>Agradecemos pela sua confiança em nossos serviços. Estamos à disposição para qualquer necessidade e esperamos atendê-lo novamente em breve.</p><br><br>
-                <p>Atenciosamente,<br>
-                <strong class="logo">Atêlie My Pet<br />"Qualidade e carinho, para o seu melhor amigo!""</strong></p><br><br>
+                <p>Atenciosamente,<br /><br />
+                <strong class="logo">Mr. Doce<br />"Seu Momento Doce,<br />começa aqui!"</strong></p><br><br>
                 <p>Atenção: Este é um e-mail automático.<br>
                 Por favor, não responda a este e-mail, pois não monitoramos respostas a mensagens automáticas. Se você tiver dúvidas ou precisar de assistência, entre em contato conosco através dos canais de atendimento disponíveis.<br>
                 Agradecemos pela sua compreensão!</p>
@@ -795,7 +428,8 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #4a2c2a;
+            background-color: #ff5c87;
+            margin-bottom: 4px;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -805,7 +439,7 @@ app.post('/sendOrder', async (req, res) => {
             box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.1);
         }
         h3 {
-            color:  #774110;
+            color:   #ff5c87;
             font-size: 22px;
             margin: 20px 0 10px;
             font-weight: 500;
@@ -817,7 +451,7 @@ app.post('/sendOrder', async (req, res) => {
             font-size: 16px;
         }
         p strong {
-        color:  #774110;
+        color:   #ff5c87;
         }
         ul {
             list-style-type: none;
@@ -833,7 +467,7 @@ app.post('/sendOrder', async (req, res) => {
         }
         li strong {
             display: block;
-            color:  #774110;
+            color:   #ff5c87;
             margin-bottom: 4px;
         }
         hr {
